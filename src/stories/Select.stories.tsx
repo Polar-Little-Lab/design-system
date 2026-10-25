@@ -1,0 +1,22 @@
+import type {Meta,StoryObj} from '@storybook/react-vite';
+import {expect,userEvent,within} from 'storybook/test';
+import {Select} from '../components/Select';
+const options=[{value:'none',label:'암호 없음',description:'암호 없이 열 수 있는 파일'},{value:'256',label:'AES-256 · 권장',description:'256비트 AES 암호화'},{value:'192',label:'AES-192',description:'192비트 AES 암호화'},{value:'128',label:'AES-128',description:'128비트 AES 암호화'}];
+const meta={title:'Components/Select',component:Select,args:{label:'암호화',options,defaultValue:'none'},parameters:{docs:{description:{component:'영구 라벨과 펼친 목록을 함께 설계합니다. Space/Enter로 열기, 방향키 이동, Enter 선택, Escape 취소를 시험하세요. 스크롤은 닫힌 선택값을 바꾸지 않습니다.'}}},decorators:[Story=><div style={{maxWidth:360,padding:20,minHeight:300}}><Story/></div>]} satisfies Meta<typeof Select>;
+export default meta;
+type Story=StoryObj<typeof meta>;
+export const Playground:Story={};
+export const Disabled:Story={args:{disabled:true,helper:'작업 중에는 변경할 수 없습니다.'}};
+export const Error:Story={args:{error:'암호화 방식을 선택하세요.',defaultValue:undefined}};
+export const LongList:Story={args:{label:'대상 환경',options:Array.from({length:25},(_,i)=>({value:String(i),label:'워크스페이스 '+(i+1),description:'스크롤과 키보드 이동을 확인하세요.',disabled:i===2})),defaultValue:'0'}};
+export const KeyboardContract:Story={play:async({canvasElement})=>{
+ const canvas=within(canvasElement),trigger=canvas.getByRole('combobox');
+ trigger.focus();await userEvent.keyboard('[Space]');
+ const body=within(canvasElement.ownerDocument.body);
+ await expect(body.getByRole('listbox')).toBeVisible();
+ await userEvent.keyboard('[ArrowDown][Escape]');
+ await expect(trigger).toHaveTextContent('암호 없음');
+ await userEvent.click(trigger);
+ await userEvent.click(body.getByRole('option',{name:/AES-256/}));
+ await expect(trigger).toHaveTextContent('AES-256');
+}};

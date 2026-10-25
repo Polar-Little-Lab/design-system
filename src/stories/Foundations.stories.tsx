@@ -1,0 +1,9 @@
+import type {Meta,StoryObj} from '@storybook/react-vite';
+import tokens from '../../tokens/frost.json';
+import {Archive,Terminal,ShieldCheck,Folder,Search,Check,ChevronDown,Plus,Trash2,Settings,Download,Eye} from 'lucide-react';
+const meta={title:'Foundations/Tokens & icons',parameters:{layout:'fullscreen'}} satisfies Meta;
+export default meta;
+type Story=StoryObj<typeof meta>;
+export const Colors:Story={render:()=> <main className="catalog"><p className="eyebrow">FOUNDATIONS / FROST</p><h1>차분한 표면, 분명한 상태.</h1><p>색상은 화면 이름이 아니라 역할로 선택합니다. 아래 값은 tokens/frost.json에서 읽습니다.</p><div className="swatches">{Object.entries(tokens.color).map(([name,color])=><div className="swatch" key={name}><div style={{background:color}}/><span>{name}<code>{color}</code></span></div>)}</div></main>};
+export const Spacing:Story={render:()=> <main className="catalog"><h1>간격과 크기</h1><div className="catalog-card">{Object.entries(tokens.space).map(([name,size])=><div key={name} style={{display:'flex',alignItems:'center',gap:20,marginBottom:20}}><code style={{width:90}}>{name} · {size}px</code><div style={{height:16,width:size,background:'var(--polar-color-accent)',borderRadius:3}}/></div>)}<p>입력 높이 40px · 기본 모서리 8px · 포커스 2px · 라벨 간격 8px</p></div><h2>문장 규칙</h2><p>기능을 설명하는 이름을 사용합니다. 내부 이력·구현 용어·과장된 보안 약속을 화면에 넣지 않습니다.</p></main>};
+export const Icons:Story={render:()=> <main className="catalog"><p className="eyebrow">ICONS</p><h1>의미가 먼저 보이는 아이콘.</h1><p>Lucide · 24px 그리드 · 1.8px 획. 작은 컨트롤에서는 16–18px로 사용합니다. 제품 앱 아이콘과 기능 아이콘은 구분합니다.</p><section className="catalog-card icon-grid">{Object.entries({Archive,Terminal,ShieldCheck,Folder,Search,Check,ChevronDown,Plus,Trash2,Settings,Download,Eye}).map(([name,Icon])=><div key={name}><Icon size={24} aria-hidden/><span>{name}</span></div>)}</section><p>아이콘만 있는 버튼에는 접근성 이름이 필요합니다. 기능을 나타내는 아이콘 대신 이모지나 문자 화살표를 넣지 않습니다.</p></main>};

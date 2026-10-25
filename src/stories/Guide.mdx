@@ -1,0 +1,38 @@
+import {Meta} from '@storybook/addon-docs/blocks';
+
+<Meta title="Reference/사용법과 AI 전달" />
+
+# Polar UI 사용법
+
+이 Storybook은 스크린샷 모음이 아닙니다. **React 컴포넌트가 브라우저에서 실제로 동작합니다.**
+
+1. **Start here**: 기본 요소를 바로 눌러봅니다.
+2. **Foundations**: Frost 색상·간격·아이콘 기준을 확인합니다.
+3. **Components**: Playground와 Disabled, Error, Loading 상태를 비교합니다.
+4. **Controls 패널**: 문구·속성 값을 바꿔봅니다.
+5. **Patterns / Archive settings**: 암호 불일치 → 수정 → 검증 성공 흐름을 시험합니다.
+6. **Accessibility 패널**: 자동 접근성 진단을 확인합니다. 이것만으로 접근성 검증이 끝난 것은 아닙니다.
+
+## 새 ChatGPT 또는 Codex 세션에 전달하기
+
+[AI 전달 문서 다운로드](./AI_HANDOFF.md)를 새 대화에 첨부하고 다음과 같이 지시하세요.
+
+> 첨부한 Polar UI 기준을 읽고 이번 앱에 적용해 주세요.
+> 구현된 컴포넌트를 우선 사용하고, 구현되지 않은 것은 완료됐다고 가정하지 마세요.
+> 변경한 상태를 Storybook에 추가하고 관련 상호작용 테스트를 실행해 주세요.
+
+전체 소스와 문서는 [GitHub 저장소](https://github.com/Polar-Little-Lab/design-system)에 있습니다.
+비공개 저장소이므로 일반 ChatGPT가 링크만으로 내용을 읽을 수 있다고 가정하지 마세요.
+
+## 구현 범위
+
+| 항목 | React / Storybook | Qt |
+| --- | --- | --- |
+| Button, Select, 입력, Checkbox | 구현 | 구현 |
+| 오류·도움말 필드 | 구현 | 구현 |
+| Notice | 구현 | 별도 컴포넌트 미구현 |
+| 압축 설정 예제 | UI 시연 | Polarzip에서 실제 엔진과 연결 |
+| 실제 압축·SSH·키체인 | 포함하지 않음 | 소비 앱에서 처리 |
+| Windows 실기기 검증 | 미수행 | 미수행 |
+
+현재 테마는 Frost입니다. 다크 테마를 구현했다고 가정하지 않습니다.

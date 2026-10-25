@@ -1,0 +1,3 @@
+import {addons} from 'storybook/manager-api';
+import {create} from 'storybook/theming/create';
+addons.setConfig({layoutCustomisations:{showPanel:(state,defaultValue)=>state.storyId?.startsWith('start-here')||state.storyId?.startsWith('foundations')?false:defaultValue},theme:create({base:'light',brandTitle:'Polar UI · Design system',brandUrl:'https://github.com/Polar-Little-Lab/design-system',colorPrimary:'#32678c',colorSecondary:'#32678c',appBg:'#f3f8fc',appContentBg:'#ffffff',appBorderColor:'#c8d8e5',appBorderRadius:8,fontBase:'-apple-system, BlinkMacSystemFont, sans-serif',textColor:'#213347',barSelectedColor:'#32678c'})});

@@ -1,0 +1,12 @@
+Polar UI Storybook 0.1.0
+
+This is a static website. Do not open index.html with file://.
+From this folder, run:
+  macOS: python3 -m http.server 6006 --bind 127.0.0.1
+  Windows: py -m http.server 6006 --bind 127.0.0.1
+Then open http://localhost:6006 in your browser.
+
+Python must be installed for these commands.
+Alternatively, clone the source repository and run npm ci, npm run storybook.
+Repository: https://github.com/Polar-Little-Lab/design-system
+AI_HANDOFF.md can be attached to a new ChatGPT conversation.

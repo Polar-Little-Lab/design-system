@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polar-ui"
+version = "0.1.0"
+description = "Polar product family tokens, accessible Qt controls and interactive gallery"
+requires-python = ">=3.13"
+dependencies = ["PySide6-Essentials==6.12.0"]
+
+[project.scripts]
+polar-ui-gallery = "polar_ui.gallery:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+polar_ui = ["tokens.json", "assets/*.svg"]

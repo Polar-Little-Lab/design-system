@@ -1,0 +1,10 @@
+import type {Meta,StoryObj} from '@storybook/react-vite';
+import {Button} from '../components/Button';
+import {Download} from 'lucide-react';
+const meta={title:'Components/Button',component:Button,args:{children:'계속',variant:'primary',disabled:false,loading:false},argTypes:{variant:{control:'select',options:['primary','secondary','ghost','danger']},onClick:{action:'clicked'}},parameters:{docs:{description:{component:'주요 실행은 primary, 보조 작업은 secondary를 사용합니다. loading은 중복 실행을 막습니다. 실제 삭제·저장은 제품에서 처리합니다.'}}}} satisfies Meta<typeof Button>;
+export default meta;
+type Story=StoryObj<typeof meta>;
+export const Playground:Story={};
+export const AllStates:Story={render:()=> <div className="polar-inline"><Button variant="primary">주요 실행</Button><Button>보조 실행</Button><Button variant="ghost">자세히</Button><Button variant="danger">삭제</Button><Button disabled>사용 불가</Button><Button loading>처리 중</Button><Button><Download size={16} aria-hidden/>다운로드</Button></div>};
+export const Loading:Story={args:{loading:true,children:'처리 중'}};
+export const Disabled:Story={args:{disabled:true}};

@@ -1,0 +1,9 @@
+node_modules/
+storybook-static/
+playwright-report/
+test-results/
+artifacts/
+.venv/
+__pycache__/
+*.egg-info/
+.DS_Store

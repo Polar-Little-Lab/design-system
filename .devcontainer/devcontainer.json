@@ -1,0 +1,8 @@
+{
+ "name":"Polar UI Storybook",
+ "image":"mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+ "forwardPorts":[6006],
+ "portsAttributes":{"6006":{"label":"Polar UI Storybook","onAutoForward":"openPreview"}},
+ "postCreateCommand":"npm ci",
+ "postStartCommand":"nohup npm run storybook -- --host 0.0.0.0 --ci > /tmp/polar-storybook.log 2>&1 &"
+}
