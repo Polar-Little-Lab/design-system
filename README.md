@@ -40,7 +40,7 @@ Windows PowerShell과 macOS Terminal에서 같은 명령을 사용합니다.
 | Patterns / Archive settings | 형식 전환, 암호 확인, 오류·성공 흐름 |
 | Reference | 사용법과 AI 전달 방법 |
 
-**Controls**에서 속성을 바꾸고, **Accessibility**에서 자동 접근성 진단을 확인하세요.
+**Controls**에서 속성을 바꾸고, **Accessibility**의 Run test 버튼으로 접근성 진단을 실행하세요.
 KeyboardContract·ValidationContract 스토리는 play 함수로 동작을 검증합니다.
 실제 압축·SSH·키체인 요청이나 파일 삭제는 하지 않습니다.
 
