@@ -3,7 +3,8 @@
 저장소: https://github.com/Polar-Little-Lab/design-system
 
 이 문서는 이전 대화를 읽을 수 없는 ChatGPT·Codex가 사용할 독립적인 개발 기준입니다.
-저장소는 비공개입니다. 링크에 접근할 수 없으면 소스나 문서를 첨부받아야 하며, 읽은 척하거나 이전 세션 상태를 추정하지 마세요.
+저장소와 Storybook은 공개입니다. 웹: https://polar-little-lab.github.io/design-system/
+링크에 접근할 수 없는 환경이면 문서를 첨부받고, 읽은 척하거나 이전 세션 상태를 추정하지 마세요.
 
 ## 목적
 Polar 제품군에서 버튼·선택 메뉴·입력·체크박스와 상태 표현을 재사용합니다.

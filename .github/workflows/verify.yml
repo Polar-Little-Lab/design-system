@@ -24,6 +24,10 @@ jobs:
         with:
           name: polar-ui-storybook
           path: storybook-static
+      - uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          path: storybook-static
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
@@ -40,3 +44,21 @@ jobs:
       - run: python -m unittest discover -s adapters/qt/tests -v
         env:
           QT_QPA_PLATFORM: offscreen
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: [storybook, qt]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Storybook
+        id: deployment
+        uses: actions/deploy-pages@v4

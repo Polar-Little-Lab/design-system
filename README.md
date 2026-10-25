@@ -5,8 +5,9 @@ Polar 제품군의 **문서 + 실제 컴포넌트 + Storybook + 상호작용 테
 
 ## 지금 바로 테스트하기
 
-이 Mac에서 실행 중인 주소: **http://127.0.0.1:6006**
-이 주소는 이 컴퓨터에서만 열립니다.
+**[Storybook 웹에서 열기](https://polar-little-lab.github.io/design-system/)** — 설치나 로그인 없이 사용할 수 있습니다.
+
+로컬 개발 주소는 http://127.0.0.1:6006 입니다.
 
 다른 컴퓨터에서는 Node.js 22.12 이상을 설치한 뒤:
 
@@ -23,8 +24,8 @@ Windows PowerShell과 macOS Terminal에서 같은 명령을 사용합니다.
 설치 없이 브라우저에서 사용하려면 GitHub 저장소의 **Code → Codespaces → Create codespace on main**을 선택할 수 있습니다.
 개발 환경 설정은 포함돼 있으며, 개인·조직의 Codespaces 사용 권한과 할당량이 필요합니다. 6006 포트는 비공개로 사용하세요.
 
-> 저장소는 비공개입니다. GitHub Pages 등 공개 호스팅은 활성화하지 않았습니다.
-> GitHub Actions는 검증한 정적 Storybook을 빌드 파일로 제공합니다.
+> 저장소와 Storybook은 공개입니다. main의 웹·Qt 검증이 통과하면 GitHub Pages가 자동 갱신됩니다.
+> GitHub Actions는 정적 Storybook 빌드 파일도 제공합니다.
 
 ## 무엇을 눌러볼 수 있나요?
 
@@ -50,7 +51,7 @@ KeyboardContract·ValidationContract 스토리는 play 함수로 동작을 검�
 2. [시작 프롬프트](docs/START_PROMPT.md)를 붙여넣습니다.
 3. 코드를 수정해야 한다면 저장소 접근 권한이나 관련 소스도 제공합니다.
 
-비공개 저장소 링크만 주면 모든 ChatGPT가 읽을 수 있는 것은 아닙니다.
+공개 링크라도 대화 환경에 따라 읽을 수 없을 수 있으므로 전달 문서를 첨부하는 방법도 제공합니다.
 문서에 없는 이전 대화 내용을 알고 있다고 가정하지 않도록 구현 범위와 검증 상태를 함께 전달합니다.
 
 ## 개발과 검증

@@ -23,7 +23,7 @@
 
 ## 미구현·미검증
 
-- 공개 웹 호스팅, npm/PyPI 게시.
+- npm/PyPI 게시.
 - Windows 실기기, Safari/WebKit·Firefox 전체 동작, VoiceOver/NVDA 검사.
 - 다크 테마·멀티 선택·검색형 콤보박스·공통 토스트.
 - Polarsh에 새 React 컨트롤 적용.
@@ -31,3 +31,7 @@
 - Codespaces 실제 실행: 설정만 포함했고 클라우드 환경을 생성하지 않았습니다.
 
 React와 Qt는 같은 계약을 따르는 별도 구현입니다. Qt 코드를 브라우저에서 직접 실행하는 것은 아닙니다.
+
+## 웹 배포
+
+https://polar-little-lab.github.io/design-system/ 에서 제공합니다. 저장소는 공개 상태입니다. main의 웹·Qt 검증을 통과한 빌드만 GitHub Pages에 배포합니다.
